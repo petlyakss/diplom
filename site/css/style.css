@@ -1,7 +1,8 @@
 body{
-	margin: 0;
-	padding: 0;
-}
+	min-height: 2000px;
+  	padding-top: 50px;
+	font-family: "RobotoLight" !important;
+  }
 .chat_main_block{	
 	width: 320px;
 	height: 450px;
@@ -25,7 +26,7 @@ body{
 }
 .chat_header_block{
 	width: 320px;
-	height: 40px;
+	height: 50px;
 	position: relative;
 	background-color: #3f51b5;
 	padding: 5px;
@@ -35,7 +36,7 @@ body{
 }
 .chat_bottom_block{
 	width: 320px;
-	height: 100px;
+	height: 80px;
 	position: relative;
 	background-color: #E8E8E8;
 	overflow-y: none;	
@@ -48,7 +49,7 @@ body{
 	padding: 10px 10px 10px 10px;
 	position: relative;
 	width: 320px;
-	height: 300px;
+	height: 320px;
 	overflow-x: hidden;
 	overflow-y: scroll;
 }
@@ -88,8 +89,8 @@ body{
 }
 .chat_bottom_block textarea{
 	border: 0px;
-	width: 235px;
-	height: 45px;
+	width: 220px;
+	height: 50px;
 	resize: none;
 	color: #222222;
 	padding: 3px;
@@ -121,9 +122,6 @@ body{
 .chat_client_message_block p{
 	text-align: right;
 }
-.clearfix{
-	clear: both;
-}
 .chat_header_img_block{
 	border: 0px solid #fff;
 	width: 40px;
@@ -151,4 +149,24 @@ body{
 	width: 40px;
 	height: 40px;
 	border-radius: 50%;
+}
+/**/
+.top_section{
+	background-color:  #3f51b5;
+	width: 100% !important;
+	padding: 0;
+	margin: 0;
+	height: 600px;
+}
+.main_page_info_top_block{
+	border: 0px solid #fff;
+	margin-top: 100px;
+}
+.main_page_info_top_block p{
+	color: #fff;
+	font-size: 18px;
+	font-weight: bold;
+}
+.main_page_info_top_block span{
+	width: 200px;
 }

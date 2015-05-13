@@ -9,6 +9,7 @@ body{
 	bottom: -400px;
 	//bottom: 0px;
 	right: 20px;
+	background-color: #FAFAFA;
 	-webkit-box-shadow: 0px 0px 6px 0px rgba(50, 50, 50, 0.55);
 	-moz-box-shadow:    0px 0px 6px 0px rgba(50, 50, 50, 0.55);
 	box-shadow:         0px 0px 6px 0px rgba(50, 50, 50, 0.55);
@@ -26,6 +27,7 @@ body{
 	width: 320px;
 	height: 40px;
 	position: relative;
+	background-color: #3f51b5;
 	padding: 5px;
 	-webkit-box-shadow: 0px 3px 6px -1px rgba(50, 50, 50, 0.59);
 	-moz-box-shadow:    0px 3px 6px -1px rgba(50, 50, 50, 0.59);
@@ -35,6 +37,7 @@ body{
 	width: 320px;
 	height: 100px;
 	position: relative;
+	background-color: #E8E8E8;
 	overflow-y: none;	
 	padding: 10px;
 	-webkit-box-shadow: 0px -3px 6px -1px rgba(50, 50, 50, 0.59);
@@ -57,13 +60,15 @@ body{
 	margin-top: 9px;
 	margin-left: -2px;
 }
-.chat_send_button{
+.chat_bottom_block a{
 	width: 50px;
 	height: 50px;
+	background-color: #3f51b5;
 	border-radius: 50%;
 	margin-right: 18px;
 	border: 0px solid #ccc;
 	float: right;
+	color: #fff;
 	font-size: 26px;
 	text-align: center;
 	-webkit-box-shadow: 0px 0px 6px 0px rgba(50, 50, 50, 0.55);
@@ -72,18 +77,21 @@ body{
 }
 .chat_bottom_block a:hover{
 	cursor: pointer;
+	background-color: #495BBF;
 	-webkit-transition: background-color .3s ease-in-out;
 	-moz-transition: background-color .3s ease-in-out;
 	-o-transition: background-color .3s ease-in-out;
 	transition: background-color .3s ease-in-out;
 }
 .chat_bottom_block a:active{
+	background-color: #26389C;
 }
 .chat_bottom_block textarea{
 	border: 0px;
 	width: 235px;
 	height: 45px;
 	resize: none;
+	color: #222222;
 	padding: 3px;
 	border-radius: 3px;
 	font-size: 12px;
@@ -91,8 +99,10 @@ body{
 }
 .chat_operator_message_block{
 	border-radius: 3px;
+	background: #7986cb;
 	float: left;
 	padding: 5px;
+	color: #fff;
 	font-style: italic;
 	font-size: 14px;
 	font-family: "RobotoRegular";
@@ -105,6 +115,7 @@ body{
 }
 .chat_client_message_block{
 	margin-bottom: 6px;
+	background: #5c6bc0;
 	float: right;
 }
 .chat_client_message_block p{
@@ -126,6 +137,7 @@ body{
 	width: 250px;
 	float: right;
 	margin-right: 10px;
+	color: #fff;
 	margin-top: 10px;
 }
 .chat_header_block:hover{
@@ -133,69 +145,10 @@ body{
 }
 .chat_header_block i{
 	font-size: 40px;
+	color: #fff;
 }
 .chat_header_block img{
 	width: 40px;
 	height: 40px;
 	border-radius: 50%;
-}
-.chat_text_typing{
-	width: 310px;
-    color: #fff;
-    font-size: 12px;
-    white-space:nowrap;
-    overflow:hidden;
-    -webkit-animation: type 5s steps(50, end);
-    animation: type 5s steps(50, end);
-}
-.start_button{
-	background: transparent !important;
-	position: absolute;
-	right: 95px;
-	top: 17px;
-	box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
-}
-
-.spinner {
-    font-size: 13px;
-    font-style: italic;
-}
-.chat_client_message_block > .spinner{
-    text-align: right;	
-}
-.spinner > div {
-    width: 10px;
-    height: 10px;
-    border-radius: 100%;
-    display: inline-block;
-    -webkit-animation: bouncedelay 1.4s infinite ease-in-out;
-    animation: bouncedelay 1.4s infinite ease-in-out;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-}
-.spinner .bounce1 {
-    -webkit-animation-delay: -0.32s;
-    animation-delay: -0.32s;
-}
-.spinner .bounce2 {
-    -webkit-animation-delay: -0.16s;
-    animation-delay: -0.16s;
-}
-@-webkit-keyframes bouncedelay {
-    0%, 80%, 100% {
-        -webkit-transform: scale(0.0)
-    }
-    40% {
-        -webkit-transform: scale(1.0)
-    }
-}
-@keyframes bouncedelay {
-    0%, 80%, 100% {
-        transform: scale(0.0);
-        -webkit-transform: scale(0.0);
-    }
-    40% {
-        transform: scale(1.0);
-        -webkit-transform: scale(1.0);
-    }
 }

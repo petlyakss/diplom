@@ -12,6 +12,7 @@ function chat_window_motion(){ //Функция анимации чата
 		$(".chat_main_block").animate({"bottom": "+=400px"}, "slow");
 		is_chat_open = true;
 		chat_init();
+		$("#chat_main_block").draggable();
 	}else{
 		$(".chat_main_block").animate({"bottom": "-=400px"}, "slow");
 		is_chat_open = false;
