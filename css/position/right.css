@@ -1,0 +1,11 @@
+.rpChat_mini_header{
+	position: fixed;
+	transform: rotate(-90deg);
+	top: 40%;
+	right: -130px;	
+}
+.rpChat_main_block_mini{
+	position: fixed;
+	top: 10%;
+	left: 70%;
+}

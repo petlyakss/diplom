@@ -1,0 +1,44 @@
+.chat_main_block{
+	background-color: #FAFAFA;
+}
+.chat_header_block{
+	background-color: #3f51b5;
+}
+.chat_bottom_block{
+	background-color: #E8E8E8;
+}
+.chat_bottom_block a{
+	background-color: #3f51b5;
+	color: #fff;
+}
+.chat_bottom_block a:hover{
+	background-color: #495BBF;
+}
+.chat_bottom_block a:active{
+	background-color: #26389C;
+}
+.chat_bottom_block textarea{
+	color: #222222;
+}
+.chat_operator_message_block{
+	background: #7986cb;
+	color: #fff;
+}
+.chat_client_message_block{
+	background: #5c6bc0;
+}
+.chat_header_text_block{
+	color: #fff;
+}
+.chat_header_block i{
+	color: #fff;
+}
+.spinner{
+    color: #fff;
+}
+.spinner > div {
+    background-color: #fff;
+}
+.start_button{
+	color: #3f51b5 !important;
+}

@@ -1,4 +1,4 @@
-$(document).ready(function(){
+/*$(document).ready(function(){
 
 var is_chat_open = false; //Проверяем, в каком состоянии чат
 
@@ -23,4 +23,35 @@ function chat_window_motion(){ //Функция анимации чата
 	$(".chat_header_block").click(function(){ //Обработка нажатия на окно чата
 		chat_window_motion();
 	});
+});*/
+$(document).ready(function(){
+	var is_rpChat_open = false;
+	
+	$(".rpChat_mini_header").click(function(){
+		if(is_rpChat_open == false){
+			is_rpChat_open = true;
+			$(".rpChat_mini_header").css("display","none");
+			$(".rpChat_main_block").css("display","block");
+		}else{
+			is_rpChat_open = false;
+			$(".rpChat_main_block").css("display","none");
+			$(".rpChat_mini_header").css("display","block");
+		}
+	});
+	
+	$("#rpChat_main_block").draggable();
+	$(".fa-arrows-alt").click(function(){
+		$(".rpChat_main_block").removeClass("rpChat_main_block_mini");
+		$(".rpChat_header_text").removeClass("rpChat_header_text_mini");
+	});
+	$(".fa-minus").click(function(){
+		$(".rpChat_main_block").addClass("rpChat_main_block_mini");
+		$(".rpChat_header_text").addClass("rpChat_header_text_mini");
+	});
+	$(".fa-times").click(function(){
+		is_rpChat_open = false;
+		$(".rpChat_main_block").css("display","none");
+		$(".rpChat_mini_header").css("display","block");
+	});
+	
 });

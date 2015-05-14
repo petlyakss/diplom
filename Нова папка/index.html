@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap 101 Template</title>
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/fonts.css" rel="stylesheet">
+
+    <link href="css/skins/default.css" rel="stylesheet">
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="js/common.js"></script>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<script type="text/javascript" src="js/jquery-ui.js"></script>
+    <script>
+    	var start_button = document.getElementById('start_button'),
+	    recognizing = false, // флаг идет ли распознование
+	    final_transcript = '';
+	// проверяем поддержку speach api
+	if (!('webkitSpeechRecognition' in window)) {
+	    start_button.style.display = "none";
+	    showInfo("info_upgrade");
+	} else { /* инициализируем api */
+	 /* создаем объект  */
+	 var recognition = new webkitSpeechRecognition();
+	 /* базовые настройки объекта */
+	 recognition.lang = 'ru'; // язык, который будет распозноваться. Значение - lang code
+	 recognition.continuous = true; // не хотим чтобы когда пользователь прикратил говорить, распознование закончилось
+	 recognition.interimResults = true;  // хотим видеть промежуточные результаты. Т.е. мы можем некоторое время видеть слова, которые еще не были откорректированы
+	 /* метод вызывается когда начинается распознование */
+	 recognition.onstart = function() {
+	    recognizing = true;
+	    showInfo('info_speak_now'); // меняем инфо текст
+	    start_button.style.background = 'url(mic-animate.gif)'; // меняем вид кнопки
+	  };
+	  /* обработчик ошибок */
+	  recognition.onerror = function(event) {
+	    if (event.error == 'no-speech') {
+	      start_button.style.background = 'url(mic.gif)';
+	      showInfo('info_no_speech');
+	    }
+	    if (event.error == 'audio-capture') {
+	      start_button.style.background = 'url(mic.gif)';
+	      showInfo('info_no_microphone');
+	    }
+	  };
+	  /* метод вызывается когда распознование закончено */
+	  recognition.onend = function() {
+	    recognizing = false;
+	    start_button.style.background = 'url(mic.gif)';
+	    showInfo('info_start'); 
+	  };
+	  /* 
+	    метод вызывается после каждой сказанной фразы. Параметра event используем атрибуты:
+	    - resultIndex - нижний индекс в результирующем массиве
+	    - results - массив всех результатов в текущей сессии
+	 */
+
+	  recognition.onresult = function(event) {
+	      var interim_transcript = '';
+	      /* 
+	        обход результирующего массива
+	      */
+	      for (var i = event.resultIndex; i < event.results.length; ++i) {
+	        /* если фраза финальная (уже откорректированная) сохраняем в конечный результат */
+	        if (event.results[i].isFinal) {
+	            final_transcript += event.results[i][0].transcript;
+	         } else { /* иначе сохраянем в промежуточный */
+	            interim_transcript += event.results[i][0].transcript;
+	         }
+	     }
+	    final_span.innerHTML = final_transcript;
+	    interim_span.innerHTML = interim_transcript;
+	  };
+	}
+	/* показ нужного сообщения */
+	function showInfo(id) {
+	    var messages = document.querySelectorAll('p');
+	    for(i=0; i<messages.length; i++) messages[i].style.display = 'none';
+	    document.getElementById(id).style.display = 'block';
+	}
+	/* обработчик клика по микрофону */
+	function startButton(event) {
+	  if (recognizing) { // если запись уже идет, тогда останавливаем
+	    recognition.stop();
+	    return;
+	  }
+	  recognition.start();
+	}
+    </script>
+    <script>
+    $(document).ready(function(){
+    	
+    });
+    	
+    </script>
+  <head>
+
+  <body>
+	<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat at ad sint nobis expedita dolorem magnam rerum, aspernatur corporis, magni laudantium non quod sit illum, eius quo asperiores. Veritatis, architecto.</div>
+	<div>Nulla facilis architecto debitis repellendus accusantium, est, fuga, vitae ad quo tempore voluptates provident exercitationem alias porro voluptatibus. Mollitia velit inventore ea qui molestiae, laboriosam distinctio sit exercitationem repudiandae repellat.</div>
+	<div>Amet cumque ipsum perspiciatis quaerat, id laborum dolorem ea et. Ipsam ducimus quo eaque possimus dicta distinctio consectetur architecto fuga, libero autem at temporibus iusto tenetur aliquid perferendis voluptatem doloremque.</div>
+	<div>Illum laudantium, nulla. Reiciendis impedit aliquid, voluptatem sit sint veniam nihil tenetur facere accusamus, minima, itaque assumenda dolor reprehenderit odit voluptas incidunt, magnam beatae repellat. In aliquid architecto enim ratione.</div>
+	<div>Consequatur aperiam temporibus, culpa, facere, minus, quis rerum explicabo consequuntur ratione est maxime reiciendis perspiciatis sit voluptate! Commodi laboriosam, accusantium velit vero neque sequi? Maiores harum nisi molestiae, inventore laborum?</div>
+	<div>Aliquam labore, esse dicta eos voluptates magni. Porro maiores odio libero numquam accusamus, laboriosam sit rem illum dolorem, nam culpa mollitia fuga blanditiis quod reprehenderit. Officiis sit exercitationem error molestiae!</div>
+	<div>Delectus perspiciatis, vitae iure ab sint. Illum molestias, nihil aliquid laudantium at, officia quidem, dolores voluptates voluptatem tenetur ex ut? Ipsum, earum. Natus, voluptatem, ipsum! Dolor rem, nostrum a magnam.</div>
+	<div>Nam, eaque consequuntur molestiae veritatis quidem esse earum eligendi incidunt, optio necessitatibus architecto temporibus sequi vel provident enim. Optio, qui illum. Autem illum iusto, totam sunt voluptatem impedit eum tenetur.</div>
+	<div>Repudiandae provident beatae, laborum eaque, consequatur voluptate ipsam sit veritatis sint earum, harum asperiores fuga voluptatibus expedita. Rerum unde recusandae quaerat culpa natus ab quibusdam alias quis itaque similique, numquam.</div>
+	<div>Ab excepturi, incidunt repudiandae aliquid at magni magnam molestias facilis exercitationem earum ratione voluptatum ad odit nostrum deserunt optio, sapiente laboriosam laborum corporis dolorem dolores nulla. Sint culpa pariatur ut!</div>
+	<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam aliquam dolore, fugiat inventore nesciunt, ratione ipsum incidunt modi omnis nobis at quo voluptates perferendis consectetur debitis. Ipsam ipsa, consequatur at.</div>
+	<div>Dolorum nam dolorem quia, esse totam, harum voluptas ex, repellat laboriosam, perspiciatis est eaque reprehenderit laborum quod. Ea, sint cum reiciendis at possimus quos animi magnam aliquam molestias distinctio, molestiae!</div>
+	<div>Ipsum, illo quo nulla, facilis hic delectus at incidunt libero reprehenderit eos non tempora possimus dicta similique aliquid, vero porro assumenda officia repellendus. Doloremque magni, eius nesciunt explicabo nemo totam.</div>
+	<div>Veniam, quidem eos. Itaque quasi incidunt eveniet dignissimos, optio, cupiditate facilis et! Quia odit autem ut officiis, nulla omnis nesciunt nemo, voluptas, nihil nam ipsa cum suscipit rerum! Cumque, autem.</div>
+	<div>Quos nihil est inventore necessitatibus recusandae officiis maxime neque nostrum praesentium suscipit eius dolorem commodi minus, dicta quis temporibus. Quas dignissimos corrupti, dolores eum eligendi. Nesciunt ratione dolores harum minima.</div>
+	<div>Aliquam natus totam eaque fugit! Eius laboriosam debitis cumque harum repellendus, voluptatibus repudiandae odio repellat nulla inventore id et quos sit mollitia, aliquid atque natus vitae ducimus. Hic, labore, cum.</div>
+	<div>Natus delectus aut commodi ipsa aperiam, omnis quisquam laudantium optio, impedit minus quaerat? Deserunt, facere itaque fuga, nobis beatae iure et in qui! Veritatis voluptatem error doloremque numquam mollitia, aperiam.</div>
+	<div>Sunt magni nam ducimus similique nesciunt. Harum quis in aut odio velit necessitatibus dignissimos nesciunt? Amet hic, facilis sit, maxime consectetur, obcaecati libero minima ratione quo, aspernatur eos repudiandae distinctio.</div>
+<p class="text-typing">Простой пример создания печатающегося текста с помощью CSS3-анимации....</p>
+
+<div class="m">
+	<div id="chat_main_block" class="chat_main_block">
+		<div class="chat_header_block">
+			<div class="chat_header_img_block">
+				<i class="fa fa-question-circle"></i>
+			</div>
+			<div class="chat_header_text_block">
+				Онлайн допомога
+			</div>
+		</div>
+		<div class="chat_text_block">
+			<div class="chat_operator_message_block">
+				Шановний клієнте, раді вітати Вас в Чат online.
+				<p>11:16</p>
+			</div>
+			<div class="clearfix"></div>
+			<div class="chat_operator_message_block chat_client_message_block">
+				Добрий день!
+				<p>11:17</p>
+			</div>
+			<div class="clearfix"></div>
+			<div class="chat_operator_message_block">
+				<div class="spinner">
+					Оператор набирає повідомлення...<br/>
+				    <div class="bounce1"></div>
+				    <div class="bounce2"></div>
+				    <div class="bounce3"></div>
+				</div>
+			</div>
+			<div class="clearfix"></div>	
+			<div class="chat_operator_message_block chat_client_message_block">
+				<div class="spinner">
+					Клієнт набирає повідомлення...<br/>
+				    <div class="bounce1"></div>
+				    <div class="bounce2"></div>
+				    <div class="bounce3"></div>
+				</div>
+			</div>
+			<div class="clearfix"></div>
+				
+
+		</div>
+		<div class="chat_bottom_block">
+			<a href="#" id="start_button" class="start_button fa fa-microphone" onclick="startButton(event)"></a>
+			<textarea id="final_span"></textarea>
+			<a href="#" class="chat_send_button"><i class="fa fa-paper-plane-o"></i></a>
+		</div>
+	</div>
+</div>
+
+
+
+
+  </body>
+
+</html>
