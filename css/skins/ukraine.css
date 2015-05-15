@@ -1,0 +1,63 @@
+.rpChat_mini_header{
+	background-color: #2196f3;	
+}
+.rpChat_mini_header_title{
+	color: #fff;
+}
+.rpChat_mini_header_img i{
+	color: #fff;
+}
+.rpChat_main_block{
+	background-color: #e3f2fd;
+	-webkit-box-shadow: 1px 1px 6px 0px rgba(50, 50, 50, 0.44);
+	-moz-box-shadow:    1px 1px 6px 0px rgba(50, 50, 50, 0.44);
+	box-shadow:         1px 1px 6px 0px rgba(50, 50, 50, 0.44);
+}
+.rpChat_header{
+	background-color: #2196f3;	
+	-webkit-box-shadow: 0px 1px 3px 0px rgba(50, 50, 50, 0.75);
+	-moz-box-shadow:    0px 1px 3px 0px rgba(50, 50, 50, 0.75);
+	box-shadow:         0px 1px 3px 0px rgba(50, 50, 50, 0.75);
+}
+.rpChat_bottom_block{
+	background-color: #bbdefb;	
+	-webkit-box-shadow: 0px 0px 9px 0px rgba(50, 50, 50, 0.44);
+	-moz-box-shadow:    0px 0px 9px 0px rgba(50, 50, 50, 0.44);
+	box-shadow:         0px 0px 9px 0px rgba(50, 50, 50, 0.44);
+}
+.rpChat_bottom_block textarea{
+	border: none;
+	background-color: #e3f2fd;
+	color: #424242;
+}
+.rpChat_send_button{
+	background-color: #2196f3;
+	color: #fff;
+	-webkit-box-shadow: 0px 7px 9px 0px rgba(50, 50, 50, 0.44);
+	-moz-box-shadow:    0px 7px 9px 0px rgba(50, 50, 50, 0.44);
+	box-shadow:         0px 7px 9px 0px rgba(50, 50, 50, 0.44);
+}
+.rpChat_start_button{
+	color: #2196f3;
+}
+.rpChat_send_button:hover{
+	background: #fdd835;
+	color: #fff;
+}
+.rpChat_hdr{
+	color: #fff;
+}
+.rpChat_operator_message_block{
+	background: #ffeb3b;
+	color: #424242;
+}
+.rpChat_client_message_block{
+	background: #fdd835;
+}
+
+.spinner{
+    color: #424242;
+}
+.spinner > div {
+    background-color: #424242;
+}

@@ -222,12 +222,21 @@
 }
 /* */
 .rpChat_main_block_mini{
-	width:400px;
-	min-width: 400px;
+	/*width:400px;*/
+	min-width: 350px;
+	min-height: 400px;
+	max-width: 25%;
+	max-height: 75%;
+	width: 25%;
+	height: 75%;
 }
 .rpChat_header_text_mini{
-	font-size: 17px;
+	font-size: 14px;
 }
 .rpChat_mini_header:hover{
 	cursor:pointer;
+}
+.rpChat_textarea_mini{
+	width: 98% !important;
+	height: 92% !important;
 }

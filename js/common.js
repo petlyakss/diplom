@@ -43,10 +43,12 @@ $(document).ready(function(){
 	$(".fa-arrows-alt").click(function(){
 		$(".rpChat_main_block").removeClass("rpChat_main_block_mini");
 		$(".rpChat_header_text").removeClass("rpChat_header_text_mini");
+		$("#final_span").removeClass("rpChat_textarea_mini");
 	});
 	$(".fa-minus").click(function(){
 		$(".rpChat_main_block").addClass("rpChat_main_block_mini");
 		$(".rpChat_header_text").addClass("rpChat_header_text_mini");
+		$("#final_span").addClass("rpChat_textarea_mini");
 	});
 	$(".fa-times").click(function(){
 		is_rpChat_open = false;
